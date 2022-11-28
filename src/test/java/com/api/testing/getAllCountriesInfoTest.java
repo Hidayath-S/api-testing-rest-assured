@@ -1,47 +1,50 @@
 package com.api.testing;
 
 
-import io.restassured.RestAssured;
+
+import static io.restassured.RestAssured.useRelaxedHTTPSValidation;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.*;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.*;
-
 public class getAllCountriesInfoTest {
 
-    private static final String BASEURI = "https://api.first.org/data/v1";
+    private static final String URI = "https://api.first.org/data/v1";
 
     @BeforeAll
     public static void setUp(){
-        baseURI = BASEURI;
-        RestAssured.useRelaxedHTTPSValidation();
+        baseURI = URI;
+        useRelaxedHTTPSValidation();
     }
 
     @Test
     public void getCountryDetails(){
 
-        Response getCountryRsp = (Response) get("/countries").getBody();
-        System.out.println("response : "+getCountryRsp.getBody().prettyPrint());
-        getCountryRsp.then().statusCode(200);
+        Response getCountryRsp =  given().get("/countries").thenReturn();
+        //System.out.println("response : "+getCountryRsp.getBody().prettyPrint());
+        assertEquals(200,getCountryRsp.getStatusCode());
+        assertEquals("OK",getCountryRsp.getStatusLine());
 
     }
 
     @Test
     public void getNewsDetails(){
 
-        Response getCountryRsp = (Response) get("/news").getBody();
-        System.out.println("response : "+getCountryRsp.getBody().prettyPrint());
-        getCountryRsp.then().statusCode(200);
+        Response getCountryRsp =  given().get("/news").thenReturn();
+        //System.out.println("response : "+getCountryRsp.getBody().prettyPrint());
+        assertEquals(200,getCountryRsp.getStatusCode());
 
     }
 
     @Test
     public void getTeamDetails(){
 
-        Response getCountryRsp = (Response) get("/teams").getBody();
-        System.out.println("response : "+getCountryRsp.getBody().prettyPrint());
-        getCountryRsp.then().statusCode(200);
+        Response getCountryRsp =  given().get("/teams").thenReturn();
+        //System.out.println("response : "+getCountryRsp.getBody().prettyPrint());
+        assertEquals(200,getCountryRsp.getStatusCode());
 
     }
 }
