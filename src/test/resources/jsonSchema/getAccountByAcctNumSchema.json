@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "accountNumber": {
+      "type": "integer"
+    },
+    "balance": {
+      "type": "number"
+    },
+    "custId": {
+      "type": "string"
+    },
+    "acctSts": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accountNumber",
+    "balance",
+    "custId",
+    "acctSts"
+  ]
+}

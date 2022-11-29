@@ -1,14 +1,18 @@
-package com.api.testing;
+package com.api.testing.publicApiTests;
 
-
+import io.restassured.response.Response;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.useRelaxedHTTPSValidation;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
-import io.restassured.response.Response;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+
+/**
+ * This test uses a public API
+ */
+
 
 public class getAllCountriesInfoTest {
 

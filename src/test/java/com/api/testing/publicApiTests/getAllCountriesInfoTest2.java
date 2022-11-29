@@ -1,4 +1,4 @@
-package com.api.testing;
+package com.api.testing.publicApiTests;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * This test uses a public API
+ */
 
 public class getAllCountriesInfoTest2 {
 
