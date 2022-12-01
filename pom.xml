@@ -39,6 +39,11 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junitVersion}</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junitVersion}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
